@@ -101,10 +101,9 @@ const DownloadActions: React.FC<DownloadActionsProps> = ({
     onAfterPrint: () => message.success('打印任务已发送！')
   })
 
-  return (
-    <div className="fixed top-4 right-4 z-10">
-      <Space>
-        <Button 
+  return ( 
+    <div className="fixed top-1/2 right-4 z-50 bg-white/80 backdrop-blur-sm rounded-lg shadow-lg p-2 flex gap-2 flex-col">
+       <Button 
           type="primary" 
           icon={<FileImageOutlined />}
           onClick={handleDownloadPNG}
@@ -129,7 +128,6 @@ const DownloadActions: React.FC<DownloadActionsProps> = ({
         >
           打印
         </Button>
-      </Space>
     </div>
   )
 }
