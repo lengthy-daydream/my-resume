@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/store'
 import PersonalInfo from '@/components/PersonalInfo'
+import PersonalAdvantages from '@/components/PersonalAdvantages'
 import Education from '@/components/Education'
 import Skills from '@/components/Skills'
 import WorkExperience from '@/components/WorkExperience'
@@ -17,6 +18,10 @@ const Resume: React.FC = () => {
       <DownloadActions targetRef={resumeRef} />
       <div ref={resumeRef} className="max-w-4xl mx-auto space-y-8">
         <PersonalInfo data={resumeData.personalInfo} />
+        <PersonalAdvantages data={{
+          advantages: resumeData.advantages,
+          portfolioLinks: resumeData.portfolioLinks
+        }} />
         <Education data={resumeData.education} />
         <Skills data={resumeData.skills} />
         <WorkExperience data={resumeData.workExperience} />

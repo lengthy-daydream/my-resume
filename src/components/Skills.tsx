@@ -6,19 +6,19 @@ const { Title } = Typography
 
 interface SkillsProps {
   data: {
-    frontend: string[]
     backend: string[]
-    database: string[]
+    frontend: string[]
+    fullstack: string[]
     tools: string[]
   }
 }
 
 const Skills: React.FC<SkillsProps> = ({ data }) => {
   const skillCategories = [
-    { title: '前端技术', skills: data.frontend, color: 'blue' },
-    { title: '后端技术', skills: data.backend, color: 'green' },
-    { title: '数据库', skills: data.database, color: 'orange' },
-    { title: '开发工具', skills: data.tools, color: 'purple' },
+    { title: '后端技能', skills: data.backend, color: 'green' },
+    { title: '前端技能', skills: data.frontend, color: 'blue' },
+    { title: '全栈及运维', skills: data.fullstack, color: 'orange' },
+    { title: '开发工具与软件', skills: data.tools, color: 'purple' },
   ]
 
   return (

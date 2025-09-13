@@ -1,0 +1,97 @@
+# 项目描述
+这是一个基于 React + TypeScript 的个人简历展示项目，使用现代前端技术栈构建。
+
+## 技术栈
+- **框架**: React 18 + TypeScript
+- **构建工具**: Vite 
+- **包管理器**: pnpm
+- **UI 库**: Ant Design (antd)
+- **CSS 框架**: UnoCSS
+- **状态管理**: Redux Toolkit
+- **部署**: GitHub Pages via GitHub Actions
+
+## 项目结构
+```
+src/
+├── components/        # React 组件
+├── pages/            # 页面组件
+├── store/            # Redux store 配置
+├── App.tsx           # 主应用组件
+└── main.tsx          # 应用入口
+```
+
+## 编码规范
+
+### React 组件
+- 使用函数式组件，避免类组件
+- 组件名称使用 PascalCase
+- 使用 TypeScript 接口定义 props
+- 优先使用 React.FC 类型标注
+- 不需要显式导入 React（React 17+）
+
+### TypeScript
+- 严格模式启用
+- 为所有 props、state、函数参数定义类型
+- 使用接口而不是 type 来定义对象类型
+- 避免使用 any 类型
+
+### 样式
+- 优先使用 UnoCSS 原子类
+- 遵循移动优先的响应式设计
+- 使用 Ant Design 组件的内置样式系统
+- 避免内联样式，优先使用类名
+
+### 文件组织
+- 组件文件名使用 PascalCase
+- 工具函数文件名使用 camelCase
+- 每个文件只导出一个主要组件/函数
+- 使用绝对路径导入 (@/ 别名)
+
+### 状态管理
+- 使用 Redux Toolkit 进行全局状态管理
+- 本地状态使用 useState
+- 异步操作使用 createAsyncThunk
+
+## 开发指南
+
+### 组件开发
+- 组件应该是纯函数，避免副作用
+- 使用 memo 优化性能（必要时）
+- 提取可复用的逻辑到自定义 hooks
+- 组件应该具有良好的可访问性
+
+### 命名约定
+- 变量和函数: camelCase
+- 组件: PascalCase
+- 常量: UPPER_CASE
+- 接口: PascalCase，以 Interface 后缀或描述性名称
+
+### 导入顺序
+1. React 相关
+2. 第三方库
+3. 内部组件/工具
+4. 类型定义
+5. 样式文件
+
+### 错误处理
+- 使用 TypeScript 严格模式避免运行时错误
+- 对外部数据进行类型检查
+- 提供有意义的错误信息
+
+## 性能优化
+- 使用 React.memo 避免不必要的重渲染
+- 使用 useMemo 和 useCallback 优化计算和函数
+- 图片使用适当的格式和尺寸
+- 代码分割和懒加载（如需要）
+
+## 部署注意事项
+- 确保所有依赖都在 package.json 中
+- 构建前检查 TypeScript 编译错误
+- 测试 GitHub Pages 的路径配置
+- 确保资源路径正确
+
+## 代码质量
+- 保持函数简洁，单一职责
+- 添加适当的注释，特别是复杂逻辑
+- 使用有意义的变量和函数名
+- 避免深度嵌套，使用早期返回 
