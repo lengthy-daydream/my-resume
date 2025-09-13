@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Card, Typography, Timeline, Tag } from 'antd'
 import { TeamOutlined } from '@ant-design/icons'
 
-const { Title, Text, Paragraph } = Typography
+const { Title, Text } = Typography
 
 interface WorkExperienceItem {
   id: string

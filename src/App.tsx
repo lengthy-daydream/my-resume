@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Layout } from 'antd'
 import Header from '@/components/Header'
 import Resume from '@/pages/Resume'
