@@ -79,15 +79,15 @@ const PersonalAdvantages: React.FC<PersonalAdvantagesProps> = ({ data }) => {
               icon={<LinkOutlined />}
               block
               size="large"
-              className="h-auto py-3 text-left flex items-center justify-start"
+              className="h-auto py-3 px-4 text-left flex items-start justify-start"
               onClick={() => window.open(item.url, '_blank')}
             >
-              <div className="text-left">
-                <div className="flex items-center">
-                  <span className="mr-2">{item.icon}</span>
-                  <span className="font-medium">{item.name}</span>
+              <div className="text-left flex-1 min-w-0">
+                <div className="flex items-center mb-1">
+                  <span className="mr-2 text-base">{item.icon}</span>
+                  <span className="font-medium text-sm">{item.name}</span>
                 </div>
-                <div className="text-xs mt-1 opacity-90">
+                <div className="text-xs leading-relaxed opacity-90 whitespace-normal break-words">
                   {item.description}
                 </div>
               </div>

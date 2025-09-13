@@ -33,14 +33,14 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ data, education }) => {
     <Card className="overflow-hidden">
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 items-start">
         {/* 头像部分 - 移动端居中，桌面端左对齐 */}
-        <div className="flex-shrink-0 w-full sm:w-auto flex justify-center sm:justify-start">
+        {/* <div className="flex-shrink-0 w-full sm:w-auto flex justify-center sm:justify-start">
           <Avatar
             size={{ xs: 100, sm: 120, md: 140 }}
             src={data.avatar}
             icon={<UserOutlined />}
             className="shadow-lg border-4 border-white shadow-gray-200"
           />
-        </div>
+        </div> */}
         
         {/* 信息部分 */}
         <div className="flex-1 w-full">
@@ -52,12 +52,12 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ data, education }) => {
             >
               {data.name}
             </Title>
-            <Title 
+            {/* <Title 
               level={4} 
               className="m-0 text-base sm:text-lg lg:text-xl text-blue-600 font-medium"
             >
               {data.title}
-            </Title>
+            </Title> */}
           </div>
 
           {/* 基本信息网格 - 响应式布局 */}
