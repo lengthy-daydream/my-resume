@@ -5,6 +5,7 @@ import { ConfigProvider } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
 import 'virtual:uno.css'
 import '@unocss/reset/tailwind.css'
+import './styles/print.css'
 import App from '@/App.tsx'
 import { store } from '@/store'
 

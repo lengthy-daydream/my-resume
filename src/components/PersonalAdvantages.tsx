@@ -32,7 +32,6 @@ const PersonalAdvantages: React.FC<PersonalAdvantagesProps> = ({ data }) => {
             </Paragraph>
           </List.Item>
         )}
-        className="mb-6"
       />
       
       <div>

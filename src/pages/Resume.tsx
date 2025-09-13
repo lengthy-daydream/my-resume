@@ -22,10 +22,10 @@ const Resume: React.FC = () => {
           advantages: resumeData.advantages,
           portfolioLinks: resumeData.portfolioLinks
         }} />
-        <Education data={resumeData.education} />
-        <Skills data={resumeData.skills} />
         <WorkExperience data={resumeData.workExperience} />
         <Projects data={resumeData.projects} />
+        <Education data={resumeData.education} />
+        <Skills data={resumeData.skills} />
       </div>
     </>
   )

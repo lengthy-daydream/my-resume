@@ -205,7 +205,6 @@ const initialState: ResumeState = {
       'GitLab CI/CD',
       'Nginx',
       'PM2',
-      'Docker',
       '服务器部署',
       '运维管理'
     ],

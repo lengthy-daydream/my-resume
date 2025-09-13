@@ -33,7 +33,11 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ data }) => {
           <Title level={2} className="mb-2">
             {data.name}
           </Title>
-          <Tag color="blue" className="text-lg px-4 py-2">
+          <Tag 
+            color="blue" 
+            className="text-lg px-4 py-2" 
+            style={{ display: 'inline-flex', alignItems: 'center', lineHeight: '1.2' }}
+          >
             {data.title}
           </Tag>
         </div>
@@ -71,7 +75,11 @@ const PersonalInfo: React.FC<PersonalInfoProps> = ({ data }) => {
             <AimOutlined className="mr-2" />
             求职意向：
           </Text>
-          <Tag color="green" className="text-base px-3 py-1">
+          <Tag 
+            color="green" 
+            className="text-base px-3 py-1"
+            style={{ display: 'inline-flex', alignItems: 'center', lineHeight: '1.2' }}
+          >
             {data.jobIntention}
           </Tag>
         </div>

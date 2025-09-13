@@ -41,6 +41,7 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
                     key={skill}
                     color={category.color}
                     className="mb-2"
+                    style={{ display: 'inline-flex', alignItems: 'center', lineHeight: '1.2' }}
                   >
                     {skill}
                   </Tag>
