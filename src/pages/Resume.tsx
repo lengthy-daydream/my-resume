@@ -15,7 +15,10 @@ const Resume: React.FC = () => {
   return (
     <>
       <DownloadActions targetRef={resumeRef} />
-      <div ref={resumeRef} className="max-w-4xl mx-auto space-y-8">
+      <div 
+        ref={resumeRef} 
+        className="w-full max-w-4xl mx-auto px-2 sm:px-4 lg:px-8 space-y-4 sm:space-y-6 lg:space-y-8"
+      >
         <PersonalInfo data={resumeData.personalInfo} education={resumeData.education} />
         <PersonalAdvantages data={{
           advantages: resumeData.advantages,
