@@ -102,7 +102,7 @@ const DownloadActions: React.FC<DownloadActionsProps> = ({
   })
 
   return ( 
-    <div className="fixed top-1/2 right-4 z-50 bg-white/80 backdrop-blur-sm rounded-lg shadow-lg p-2 flex gap-2 flex-col">
+    <div className="fixed top-1/2 right-4 z-50 flex gap-2 flex-col">
        <Button 
           type="primary" 
           icon={<FileImageOutlined />}
