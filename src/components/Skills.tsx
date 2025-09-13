@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Card, Typography, Divider } from 'antd'
+import { Card, Typography } from 'antd'
 import { CodeOutlined, CheckCircleOutlined } from '@ant-design/icons'
 
 const { Title, Paragraph } = Typography
@@ -30,7 +30,7 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
       
       {/* 移动端垂直布局，桌面端可选网格布局 */}
       <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-        {skillCategories.map((category, index) => (
+        {skillCategories.map((category) => (
           <div key={category.title} className="group">
             {/* 技能标题 */}
             <div className="flex items-center mb-3 sm:mb-4">
@@ -54,7 +54,6 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
                 ))}
               </ul>
             </div>
-
           </div>
         ))}
       </div>

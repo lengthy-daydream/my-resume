@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Card, Avatar, Typography, Space, Tag, Divider } from 'antd'
-import { UserOutlined, PhoneOutlined, MailOutlined, EnvironmentOutlined, CalendarOutlined, TrophyOutlined, AimOutlined, BookOutlined } from '@ant-design/icons'
+import { Card, Typography, Space, Tag, Divider } from 'antd'
+import { PhoneOutlined, MailOutlined, EnvironmentOutlined, CalendarOutlined, TrophyOutlined, AimOutlined, BookOutlined } from '@ant-design/icons'
 
 const { Title, Text } = Typography
 

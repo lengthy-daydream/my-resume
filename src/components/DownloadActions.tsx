@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button, Space, message, Spin } from 'antd'
+import { Button, message, Spin } from 'antd'
 import { DownloadOutlined, FileImageOutlined, FilePdfOutlined } from '@ant-design/icons'
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'

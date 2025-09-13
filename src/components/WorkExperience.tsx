@@ -39,7 +39,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ data }) => {
       
       <Timeline
         className="px-0 sm:px-4"
-        items={data.map((item, index) => ({
+        items={data.map((item) => ({
           dot: (
             <div className="bg-blue-500 w-3 h-3 sm:w-4 sm:h-4 rounded-full border-2 border-white shadow-md" />
           ),

@@ -39,7 +39,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
       </Title>
       
       <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-        {data.map((project, index) => (
+        {data.map((project) => (
           <Card 
             key={project.id}
             className="shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-blue-200"

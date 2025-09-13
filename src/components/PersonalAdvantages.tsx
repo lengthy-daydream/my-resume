@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Card, Typography, Row, Col, Button, Space } from 'antd'
+import { Card, Typography, Row, Col, Button } from 'antd'
 import { StarOutlined, LinkOutlined } from '@ant-design/icons'
 
 const { Title, Paragraph } = Typography
