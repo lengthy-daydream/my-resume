@@ -1,15 +1,15 @@
 import * as React from 'react'
 import { Card, Typography, Divider } from 'antd'
-import { CodeOutlined } from '@ant-design/icons'
+import { CodeOutlined, CheckCircleOutlined } from '@ant-design/icons'
 
 const { Title, Paragraph } = Typography
 
 interface SkillsProps {
   data: {
-    backend: string
-    frontend: string
-    fullstack: string
-    tools: string
+    backend: string[]
+    frontend: string[]
+    fullstack: string[]
+    tools: string[]
   }
 }
 
@@ -43,23 +43,18 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
               </Title>
             </div>
 
-            {/* 技能内容 */}
+            {/* 技能内容 - 列表渲染 */}
             <div className="bg-gray-50 rounded-lg p-3 sm:p-4 lg:p-6 hover:bg-gray-100 transition-colors duration-200">
-              <Paragraph className="m-0 text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-                {category.description.split('\n').map((line, lineIndex, array) => (
-                  <React.Fragment key={lineIndex}>
-                    {line.trim()}
-                    {lineIndex < array.length - 1 && <br className="block sm:hidden" />}
-                    {lineIndex < array.length - 1 && <span className="hidden sm:inline"> </span>}
-                  </React.Fragment>
+              <ul className="space-y-2 sm:space-y-3 m-0">
+                {category.description.map((skill, skillIndex) => (
+                  <li key={skillIndex} className="flex items-start text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
+                    <CheckCircleOutlined className="text-green-500 mt-1 mr-3 flex-shrink-0" />
+                    <span className="flex-1">{skill}</span>
+                  </li>
                 ))}
-              </Paragraph>
+              </ul>
             </div>
 
-            {/* 分隔线 - 最后一项不显示 */}
-            {index < skillCategories.length - 1 && (
-              <Divider className="my-4 sm:my-6 lg:my-8 opacity-30" />
-            )}
           </div>
         ))}
       </div>
@@ -74,7 +69,7 @@ const Skills: React.FC<SkillsProps> = ({ data }) => {
             <Title level={5} className="m-0 text-blue-800 mb-1">
               技术栈概览
             </Title>
-            <Paragraph className="text-blue-600 text-sm">
+            <Paragraph className="text-blue-600 text-sm m-0">
               涵盖前后端全栈开发，具备完整的项目开发和部署能力
             </Paragraph>
           </div>

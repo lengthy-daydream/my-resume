@@ -68,7 +68,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ data }) => {
                 <ul className="space-y-1 sm:space-y-2 pl-4 sm:pl-6">
                   {item.description.map((desc, descIndex) => (
                     <li key={descIndex} className="text-sm sm:text-base text-gray-700 leading-relaxed relative">
-                      <span className="absolute -left-3 sm:-left-4 top-2 w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                   
                       {desc}
                     </li>
                   ))}

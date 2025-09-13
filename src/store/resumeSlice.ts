@@ -46,10 +46,10 @@ interface ResumeState {
   workExperience: WorkExperience[]
   projects: Project[]
   skills: {
-    backend: string
-    frontend: string
-    fullstack: string
-    tools: string
+    backend: string[]
+    frontend: string[]
+    fullstack: string[]
+    tools: string[]
   }
   advantages: string[]
   portfolioLinks: {
@@ -172,10 +172,29 @@ const initialState: ResumeState = {
     }
   ],
   skills: {
-    backend: '熟练掌握 Node.js，并精通基于 TypeScript 的企业级框架 NestJS 进行后端开发。\n熟悉 MySQL 数据库的设计、优化，并熟练使用 TypeORM 等ORM框架进行数据操作。\n了解 Redis 等非关系型数据库，并有在项目中进行应用的经验。\n具备 RESTful API 的设计与开发经验，熟悉 JWT 等认证授权机制。\n熟悉 MQTT 协议，并有使用 NestJS 对接 MQTT Broker 实现物联网设备通信的经验。',
-    frontend: '精通 Vue.js 技术栈，熟练掌握 Vue3、Pinia、Vue-Router，并有丰富的项目实践经验。\n熟练掌握 React 技术栈，熟悉 React Hooks、Redux Toolkit 等状态管理方案，并有相关项目实践经验。\n熟练掌握 UniApp 跨端开发，具备 H5、小程序、App 的多端开发和上架经验。\n熟练掌握 HTML5、CSS3、JavaScript (ES6+)，熟悉 TypeScript 在前端项目中的应用。\n熟悉 ECharts/AntV 等数据可视化库以及 AntDesignVue/Ant Design 等UI组件库。',
-    fullstack: '熟练使用 GitLab CI/CD 进行项目自动化构建、测试与部署。\n熟悉 Nginx 的基本配置及反向代理。\n具备独立的服务器部署和运维能力。',
-    tools: '熟练使用 Axure 进行原型设计，使用 Pixso 进行UI设计。\n常用开发工具：VSCode、Git、Api fox 等。'
+    backend: [
+      '熟练掌握 Node.js，并精通基于 TypeScript 的企业级框架 NestJS 进行后端开发',
+      '熟悉 MySQL 数据库的设计、优化，并熟练使用 TypeORM 等ORM框架进行数据操作',
+      '了解 Redis 等非关系型数据库，并有在项目中进行应用的经验',
+      '具备 RESTful API 的设计与开发经验，熟悉 JWT 等认证授权机制',
+      '熟悉 MQTT 协议，并有使用 NestJS 对接 MQTT Broker 实现物联网设备通信的经验'
+    ],
+    frontend: [
+      '精通 Vue.js 技术栈，熟练掌握 Vue3、Pinia、Vue-Router，并有丰富的项目实践经验',
+      '熟练掌握 React 技术栈，熟悉 React Hooks、Redux Toolkit 等状态管理方案，并有相关项目实践经验',
+      '熟练掌握 UniApp 跨端开发，具备 H5、小程序、App 的多端开发和上架经验',
+      '熟练掌握 HTML5、CSS3、JavaScript (ES6+)，熟悉 TypeScript 在前端项目中的应用',
+      '熟悉 ECharts/AntV 等数据可视化库以及 AntDesignVue/Ant Design 等UI组件库'
+    ],
+    fullstack: [
+      '熟练使用 GitLab CI/CD 进行项目自动化构建、测试与部署',
+      '熟悉 Nginx 的基本配置及反向代理',
+      '具备独立的服务器部署和运维能力'
+    ],
+    tools: [
+      '熟练使用 Axure 进行原型设计，使用 Pixso 进行UI设计',
+      '常用开发工具：VSCode、Git、Api fox 等'
+    ]
   },
   advantages: [
     '6年开发经验, 具备从前端到后端的全栈开发能力和独立项目交付能力',

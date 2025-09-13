@@ -86,7 +86,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
                 <ol className="space-y-1 sm:space-y-2 pl-4 sm:pl-6 m-0">
                   {project.highlights.map((highlight, highlightIndex) => (
                     <li key={highlightIndex} className="text-sm sm:text-base text-gray-700 leading-relaxed relative">
-                      <span className="absolute -left-3 sm:-left-4 top-2 w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                     
                       {highlight}
                     </li>
                   ))}
