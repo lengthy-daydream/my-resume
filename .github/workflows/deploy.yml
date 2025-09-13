@@ -56,6 +56,8 @@ jobs:
       
     - name: Build project
       run: pnpm build
+      env:
+        DEPLOY_PLATFORM: github
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
