@@ -25,35 +25,35 @@ const DownloadActions: React.FC<DownloadActionsProps> = ({
     const pcStyles = `
       /* PC端下载专用样式 */
       .resume-download-container {
-        max-width: 1200px !important;
+        max-width: 900px !important;
         margin: 0 auto !important;
-        padding: 24px !important;
+        padding: 20px !important;
         font-size: 14px !important;
         background: #ffffff !important;
       }
       
       .resume-download-container .ant-card {
-        margin-bottom: 24px !important;
+        margin-bottom: 20px !important;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
       }
 
       .resume-download-container .ant-typography-title {
-        margin-bottom: 16px !important;
-        font-size: 20px !important;
+        margin-bottom: 14px !important;
+        font-size: 18px !important;
         color: #1890ff !important;
       }
 
       .resume-download-container .ant-avatar {
-        width: 120px !important;
-        height: 120px !important;
-        margin-right: 24px !important;
+        width: 100px !important;
+        height: 100px !important;
+        margin-right: 20px !important;
       }
 
       /* 强制两列布局 */
       .resume-download-container .grid {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
-        gap: 16px !important;
+        gap: 14px !important;
       }
 
       /* 时间线样式 */
@@ -62,13 +62,13 @@ const DownloadActions: React.FC<DownloadActionsProps> = ({
       }
 
       .resume-download-container .ant-timeline-item-content {
-        margin-left: 24px !important;
+        margin-left: 20px !important;
       }
 
       /* 标签样式 */
       .resume-download-container .ant-tag {
-        margin: 2px 4px 2px 0 !important;
-        font-size: 12px !important;
+        margin: 2px 3px 2px 0 !important;
+        font-size: 11px !important;
       }
 
       /* 响应式断点强制禁用 */
@@ -107,21 +107,21 @@ const DownloadActions: React.FC<DownloadActionsProps> = ({
       .resume-download-container .skills-grid {
         display: grid !important;
         grid-template-columns: 1fr 1fr !important;
-        gap: 20px !important;
+        gap: 16px !important;
       }
 
       /* 项目卡片优化 */
       .resume-download-container .project-card {
         break-inside: avoid !important;
         page-break-inside: avoid !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 16px !important;
       }
 
       /* 强制PC端按钮大小和间距 */
       .resume-download-container .ant-btn {
         height: auto !important;
-        padding: 8px 16px !important;
-        font-size: 14px !important;
+        padding: 6px 12px !important;
+        font-size: 13px !important;
       }
 
       /* 头像和信息区域强制横向布局 */
@@ -129,6 +129,23 @@ const DownloadActions: React.FC<DownloadActionsProps> = ({
         display: flex !important;
         flex-direction: row !important;
         align-items: flex-start !important;
+      }
+
+      /* 优化文字大小以适应较小宽度 */
+      .resume-download-container .ant-typography {
+        line-height: 1.4 !important;
+      }
+
+      .resume-download-container .ant-typography-title.ant-typography-title-level-3 {
+        font-size: 18px !important;
+      }
+
+      .resume-download-container .ant-typography-title.ant-typography-title-level-4 {
+        font-size: 16px !important;
+      }
+
+      .resume-download-container .ant-typography-title.ant-typography-title-level-5 {
+        font-size: 14px !important;
       }
     `
 
@@ -175,16 +192,20 @@ const DownloadActions: React.FC<DownloadActionsProps> = ({
       
       setLoadingText('正在生成高清图片...')
       
+      // 动态计算合适的宽度
+      const downloadWidth = 900 // 优化后的宽度，兼顾PC样式和手机查看
+      const downloadHeight = Math.ceil(targetRef.current.scrollHeight * (downloadWidth / 1200))
+      
       // 使用 html2canvas 将 DOM 转换为 canvas
       const canvas = await html2canvas(targetRef.current, {
-        scale: 1.5, // 降低清晰度以减少文件大小
+        scale: 1.8, // 稍微提高清晰度补偿宽度减少
         useCORS: true,
         backgroundColor: '#ffffff',
-        width: 1200,
-        height: targetRef.current.scrollHeight,
-        windowWidth: 1200,
+        width: downloadWidth, // 使用优化后的宽度
+        height: downloadHeight,
+        windowWidth: downloadWidth,
         windowHeight: 800,
-        logging: false, // 关闭日志
+        logging: false,
         imageTimeout: 0
       })
 
@@ -193,7 +214,7 @@ const DownloadActions: React.FC<DownloadActionsProps> = ({
       // 创建下载链接
       const link = document.createElement('a')
       link.download = `${fileName}.png`
-      link.href = canvas.toDataURL('image/png', 0.8) // 降低质量以减少文件大小
+      link.href = canvas.toDataURL('image/png', 0.85) // 稍微提高质量
       link.click()
 
       message.success('PNG 导出成功！')
@@ -229,13 +250,18 @@ const DownloadActions: React.FC<DownloadActionsProps> = ({
 
       setLoadingText('正在生成PDF文件...')
 
-      // 先生成 canvas，使用较低的质量设置
+      // 动态计算合适的宽度
+      const downloadWidth = 800 // 优化后的宽度
+      const downloadHeight = Math.ceil(targetRef.current.scrollHeight * (downloadWidth / 1200))
+
+      // 先生成 canvas，使用优化后的设置
       const canvas = await html2canvas(targetRef.current, {
-        scale: 1.2, // 降低scale以减少文件大小
+        scale: 1.6, // 提高清晰度补偿宽度减少
         useCORS: true,
         backgroundColor: '#ffffff',
-        width: 1200,
-        windowWidth: 1200,
+        width: downloadWidth,
+        height: downloadHeight,
+        windowWidth: downloadWidth,
         windowHeight: 800,
         logging: false,
         imageTimeout: 0
@@ -243,8 +269,8 @@ const DownloadActions: React.FC<DownloadActionsProps> = ({
 
       setLoadingText('正在压缩并生成PDF...')
 
-      // 使用较低的图片质量
-      const imgData = canvas.toDataURL('image/jpeg', 0.6) // 使用JPEG格式和较低质量
+      // 使用适中的图片质量
+      const imgData = canvas.toDataURL('image/jpeg', 0.7) // 稍微提高质量
       const imgWidth = 210 // A4 纸张宽度 (mm)
       const pageHeight = 295 // A4 纸张高度 (mm)
       const imgHeight = (canvas.height * imgWidth) / canvas.width
