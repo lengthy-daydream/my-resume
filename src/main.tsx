@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { ConfigProvider } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
-import '@unocss/reset/tailwind.css'
+import '@unocss/reset/normalize.css'  // 使用更轻量的重置样式
 import 'virtual:uno.css'
 import '@/css/index.css'
 import App from '@/App.tsx'
