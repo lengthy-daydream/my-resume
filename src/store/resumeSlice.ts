@@ -203,7 +203,7 @@ const initialState: ResumeState = {
     '具备良好的编码习惯和项目架构能力，熟悉APP开发及组件化封装'
   ],
   portfolioLinks: {
-    bigScreen: 'https://lengthy-daydream.github.io/vue-big-screen/#/',
+    bigScreen: 'https://vue-big-screen.netlify.app/#/',
     appStore: 'https://apps.apple.com/cn/app/%E8%A1%A3%E5%B8%A6%E4%BF%9D-%E4%B8%BA%E5%8D%83%E4%B8%87%E5%AE%B6%E5%BA%AD%E4%BF%9D%E9%A9%BE%E6%8A%A4%E8%88%AA/id6749834787'
   }
 }
